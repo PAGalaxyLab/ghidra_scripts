@@ -15,7 +15,7 @@ Some utility used by other Ghidra scripts.
 # trace_function_call_parm_value.py
 Trace Function call parameters value using Ghidra P-Code.
 
-![Demo pic](docs/images/trace_function_call_parm_value_pic_1.png)
+![Demo pic](docs/images/trace_function_call_parm_value_pic_1.jpg)
 
 
 # Demo
@@ -25,4 +25,4 @@ Example script, rename undefined function with error print string.
 
 [Detail steps](docs/wr886nv7_rename_function_with_error_print.md)
 
-![Demo pic](docs/images/wr886nv7_rename_function_with_error_print_1.png)
+![Demo pic](docs/images/wr886nv7_rename_function_with_error_print_1.jpg)
