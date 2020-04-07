@@ -1,7 +1,7 @@
 # coding=utf-8
 from ghidra.program.model.symbol.SourceType import USER_DEFINED
-from function_analyzer import FunctionAnalyzer
-from common import get_logger
+from galaxy_utility.function_analyzer import FunctionAnalyzer
+from galaxy_utility.common import get_logger
 import sys
 
 

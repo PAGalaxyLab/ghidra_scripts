@@ -1,3 +1,9 @@
+# Trace function call parameters value using Ghidra P-Code.
+# @author dark-lbp
+# @category
+# @keybinding
+# @menupath
+# @toolbar
 from ghidra.app.decompiler import DecompInterface, DecompileOptions, DecompileResults
 from ghidra.program.model.pcode import HighParam, PcodeOp, PcodeOpAST
 from ghidra.program.model.address import GenericAddress
@@ -305,11 +311,12 @@ class FunctionAnalyzer(object):
             opcode = pcodeOpAST.getOpcode()
             if opcode == PcodeOp.CALL:
                 target_call_addr = pcodeOpAST.getInput(0).getAddress()
+                self.logger.debug("target_call_addr: {}".format(target_call_addr))
 
             elif opcode == PcodeOp.CALLIND:
                 target_call_addr = FlowNode(pcodeOpAST.getInput(0)).get_value()
                 self.logger.debug("target_call_addr: {}".format(target_call_addr))
-            self.logger.debug("Calling {}(0x{}) ".format(getFunctionAt(toAddr(target_call_addr)), target_call_addr))
+
             inputs = pcodeOpAST.getInputs()
             for i in range(len(inputs))[1:]:
                 parm = inputs[i]
