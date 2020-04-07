@@ -20,6 +20,6 @@
 
 ## wr886nv7_rename_function_with_error_print.py
 样例脚本, 利用函数错误输出中的函数名关键字来重命名未定义的函数。
-[Detail steps](docs/wr886nv7_rename_function_with_error_print.zh-cn.md)
+[详细步骤](docs/wr886nv7_rename_function_with_error_print.zh-cn.md)
 
 ![Demo pic](docs/images/wr886nv7_rename_function_with_error_print_1.png)
