@@ -24,3 +24,9 @@
 [详细步骤](docs/wr886nv7_rename_function_with_error_print.zh-cn.md)
 
 ![Demo pic](docs/images/wr886nv7_rename_function_with_error_print_1.jpg)
+
+
+# AnalyzeOCMsgSend.py
+使用Ghidra脚本分析Objective-C中的MsgSend方法。
+
+![Demo pic](docs/images/analyze_oc_msg_send_pic.png)

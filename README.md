@@ -26,3 +26,9 @@ Example script, rename undefined function with error print string.
 [Detail steps](docs/wr886nv7_rename_function_with_error_print.md)
 
 ![Demo pic](docs/images/wr886nv7_rename_function_with_error_print_1.jpg)
+
+
+# AnalyzeOCMsgSend.py
+Analyze Objective-C MsgSend using this script.
+
+![Demo pic](docs/images/analyze_oc_msg_send_pic.png)
