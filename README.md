@@ -32,3 +32,18 @@ Example script, rename undefined function with error print string.
 Analyze Objective-C MsgSend using this script.
 
 ![Demo pic](docs/images/analyze_oc_msg_send_pic.png)
+
+
+# DexFile_Parameter_Trace.py
+Trace an Android Function parameters value using Ghidra P-Code.
+
+# Demo
+
+## function logd 1st parameter trace
+![Demo pic](docs/images/DexFile_Parameter_Trace_Logd.png)
+
+Provide target function's address and parameters index
+![Demo pic](docs/images/DexFile_Parameter_Trace_Script_Param.png)
+
+Output
+![Demo pic](docs/images/DexFile_Parameter_trace_Script_Output.png)
