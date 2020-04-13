@@ -30,3 +30,18 @@
 使用Ghidra脚本分析Objective-C中的MsgSend方法。
 
 ![Demo pic](docs/images/analyze_oc_msg_send_pic.png)
+
+
+# DexFile_Parameter_Trace.py
+使用Pcode追踪Dex文件中的函数参数。
+
+# Demo
+
+## 使用Ghidra脚本分析Logd函数的第一个参数
+![Demo pic](docs/images/DexFile_Parameter_Trace_Logd.png)
+
+提供Logd函数的地址(这里是0x50123cdc)和2(代表第一个参数)
+![Demo pic](docs/images/DexFile_Parameter_Trace_Script_Param.png)
+
+输出
+![Demo pic](docs/images/DexFile_Parameter_trace_Script_Output.png)
