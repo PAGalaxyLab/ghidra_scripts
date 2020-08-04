@@ -17,9 +17,7 @@
 ![Demo pic](docs/images/trace_function_call_parm_value_pic_1.jpg)
 
 
-# Demo
-
-## wr886nv7_rename_function_with_error_print.py
+# wr886nv7_rename_function_with_error_print.py
 样例脚本, 利用函数错误输出中的函数名关键字来重命名未定义的函数。
 [详细步骤](docs/wr886nv7_rename_function_with_error_print.zh-cn.md)
 
@@ -35,8 +33,6 @@
 # DexFile_Parameter_Trace.py
 使用Pcode追踪Dex文件中的函数参数。
 
-# Demo
-
 ## 使用Ghidra脚本分析Logd函数的第一个参数
 ![Demo pic](docs/images/DexFile_Parameter_Trace_Logd.png)
 
@@ -45,3 +41,14 @@
 
 输出
 ![Demo pic](docs/images/DexFile_Parameter_trace_Script_Output.png)
+
+# ollvm_deobf_fla.py
+使用Pcode对OLLVM控制流平坦化进行反混淆。
+
+在Ghidra的界面中选中用于初始化状态变量的汇编代码。
+
+![Demo pic](docs/images/ghidra-ollvm-obf.png)
+
+运行脚本，进行反混淆
+
+![Demo pic](docs/images/ghidra-ollvm-deobf.png)

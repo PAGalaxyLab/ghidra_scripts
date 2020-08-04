@@ -17,10 +17,7 @@ Trace Function call parameters value using Ghidra P-Code.
 
 ![Demo pic](docs/images/trace_function_call_parm_value_pic_1.jpg)
 
-
-# Demo
-
-## wr886nv7_rename_function_with_error_print.py
+# wr886nv7_rename_function_with_error_print.py
 Example script, rename undefined function with error print string.
 
 [Detail steps](docs/wr886nv7_rename_function_with_error_print.md)
@@ -37,8 +34,6 @@ Analyze Objective-C MsgSend using this script.
 # DexFile_Parameter_Trace.py
 Trace an Android Function parameters value using Ghidra P-Code.
 
-# Demo
-
 ## function logd 1st parameter trace
 ![Demo pic](docs/images/DexFile_Parameter_Trace_Logd.png)
 
@@ -47,3 +42,14 @@ Provide target function's address and parameters index
 
 Output
 ![Demo pic](docs/images/DexFile_Parameter_trace_Script_Output.png)
+
+# ollvm_deobf_fla.py
+Deobfuscating OLLVM control flow flattening.
+
+Select the assembly for state var initialization in Ghidra code listing interface.
+
+![Demo pic](docs/images/ghidra-ollvm-obf.png)
+
+Then run the script for deobfuscation.
+
+![Demo pic](docs/images/ghidra-ollvm-deobf.png)
