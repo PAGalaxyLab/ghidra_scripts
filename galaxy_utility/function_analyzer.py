@@ -56,8 +56,10 @@ class FlowNode(object):
             self.logger.debug("Var_node isRegister")
             self.logger.debug(self.var_node.getDef())
             return calc_pcode_op(self.var_node.getDef())
-        elif self.var_node.isPersistant():
-            self.logger.debug("Var_node isPersistant")
+
+        # https://github.com/NationalSecurityAgency/ghidra/issues/2283
+        elif self.var_node.isPersistent():
+            self.logger.debug("Var_node isPersistent")
             # TODO: Handler this later
             return
         elif self.var_node.isAddrTied():

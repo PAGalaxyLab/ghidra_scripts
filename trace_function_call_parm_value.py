@@ -11,8 +11,8 @@ import logging
 import struct
 
 
-debug = True
-# debug = False
+# debug = True
+debug = False
 process_is_64bit = False
 
 # Init Default Logger
@@ -98,9 +98,12 @@ class FlowNode(object):
             return calc_pcode_op(self.var_node.getDef())
         elif self.var_node.isRegister():
             self.logger.debug("Var_node isRegister")
+            self.logger.debug(self.var_node.getDef())
             return calc_pcode_op(self.var_node.getDef())
-        elif self.var_node.isPersistant():
-            self.logger.debug("Var_node isPersistant")
+
+        # https://github.com/NationalSecurityAgency/ghidra/issues/2283
+        elif self.var_node.isPersistent():
+            self.logger.debug("Var_node isPersistent")
             # TODO: Handler this later
             return
         elif self.var_node.isAddrTied():
@@ -128,6 +131,8 @@ def calc_pcode_op(pcode):
                 return value_1.offset + value_2.offset
 
             else:
+                logger.debug("value_1: {}".format(value_1))
+                logger.debug("value_2: {}".format(value_2))
                 return None
 
         elif opcode == PcodeOp.CAST:
@@ -159,7 +164,7 @@ def calc_pcode_op(pcode):
                 if not isinstance(value_1, GenericAddress):
                     logger.debug("value_1 is not GenericAddress!")
                     return
-                value_1 = get_signed_value(value_1)
+                value_1 = get_signed_value(value_1.offset)
                 # TODO: Handle input2 later
                 value_2 = var_node_2.get_value()
                 logger.debug("value_2: {}".format(value_2))
@@ -287,6 +292,9 @@ class FunctionAnalyzer(object):
 
     def get_all_call_pcode(self):
         ops = self.get_function_pcode()
+        if not ops:
+            return
+
         while ops.hasNext():
             pcodeOpAST = ops.next()
             opcode = pcodeOpAST.getOpcode()
@@ -322,7 +330,9 @@ class FunctionAnalyzer(object):
                 parm = inputs[i]
                 self.logger.debug("parm{}: {}".format(i, parm))
                 parm_node = FlowNode(parm)
+                self.logger.debug("parm_node: {}".format(parm_node))
                 parm_value = parm_node.get_value()
+                self.logger.debug("parm_value: {}".format(parm_value))
                 if isinstance(parm_value, GenericAddress):
                     parm_value = parm_value.offset
                 parms[i] = parm_value
